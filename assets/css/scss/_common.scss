@@ -1,0 +1,182 @@
+@use "./mixin" as *;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+
+html {
+	scroll-behavior: smooth;
+}
+body {
+  &.open {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+body,
+a {
+	color: #000000;
+	font-family: "Noto Serif JP", serif;
+}
+a {
+	transition: 0.3s;
+	text-decoration: none;
+	&:hover {
+		transition: 0.3s;
+		opacity: 0.7;
+	}
+}
+img {
+	max-width: 100%;
+}
+ul {
+	li {
+		list-style: none;
+	}
+}
+main {
+	position: relative;
+}
+section {
+	height: 100dvh;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* 上から下にスクロールした時のアクティブなセクションの1個前のセクション */
+.out_to_top {
+	animation: outToTopBg 1s forwards;
+}
+@keyframes outToTopBg {
+	0% {
+		animation-timing-function: cubic-bezier(.12, .07, .55, -.06);
+		transform-origin: center;
+	}
+
+	65% {
+		opacity: 1;
+		transform: scale3d(.9, .9, .9) translate3d(2.5%, -14%, 0);
+		animation-timing-function: cubic-bezier(.12, .07, .55, -.06);
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale3d(.8, .8, .8) translate3d(25%, -140%, 0);
+	}
+}
+
+/* 上から下にスクロールした時のアクティブなセクション */
+.in_from_top {
+	animation: inFromTopBg 1s ease-out forwards;
+}
+@keyframes inFromTopBg {
+	0% {
+		transform: scale3d(.85, .85, .85) translate3d(25%, -140%, 0); /* 右上から */
+		animation-timing-function: cubic-bezier(.55, .055, .675, .19);
+		transform-origin: center;
+		opacity: 0;
+	}
+
+	80% {
+		transform: scale3d(.85, .85, .85) translate3d(5%, -28%, 0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+/* 下から上にスクロールした時のアクティブなセクション */
+.in_from_bottom {
+	animation: inFromBottomBg 1s forwards;
+}
+@keyframes inFromBottomBg {
+	0% {
+		transform: scale3d(.85, .85, .85) translate3d(-25%, 140%, 0); /* 左下から */
+		animation-timing-function: cubic-bezier(.55, .055, .675, .19);
+		transform-origin: center;
+	}
+
+	80% {
+		transform: scale3d(.85, .85, .85) translate3d(-5%, 28%, 0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+/* 下から上にスクロールした時のアクティブなセクションの次のセクション */
+.out_to_bottom {
+	animation: outToBottomBg .8s ease-out forwards;
+}
+@keyframes outToBottomBg {
+	from {
+		animation-timing-function: cubic-bezier(.12, .07, .55, -.06);
+		transform-origin: center
+	}
+
+	65% {
+		opacity: 1;
+		transform: scale3d(.9, .9, .9) translate3d(-2.5%, 14%, 0);
+		animation-timing-function: cubic-bezier(.12, .07, .55, -.06)
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale3d(.8, .8, .8) translate3d(-25%, 140%, 0)
+	}
+}
+
+/* アニメーション適用用クラス */
+.current_sec {
+	opacity: 1;
+	visibility: visible;
+}
+
+.hidden_sec {
+	opacity: 0;
+	visibility: hidden;
+}
+
+
+
+.common-btn {
+	border: 1px solid #fff;
+	background: rgba(0, 0, 0, 0.4);
+	text-align: center;
+	color: #FFFFFF;
+	font-size: max(1vw , 12px);
+	font-weight: 600;
+	display: block;
+	max-width: 392px;
+	width: 55%;
+	margin-inline: auto;
+	padding-block: 2%;
+	position: relative;
+	@include w1024 {
+		width: 35%;
+		padding-block: 1.5%;
+	}
+	@include w599 {
+		width: 50%;
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		right: 5%;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 7%;
+		aspect-ratio: 2/1;
+		background: url(/assets/image/btn-arrow.webp) no-repeat center center / contain;
+	}
+	&--black {
+		border: 1px solid #0A0B0A;
+		background: none;
+		color: #0A0B0A;
+		&::before {
+			background: url(/assets/image/btn-arrow-black.webp) no-repeat center center / contain;
+		}
+	}
+}

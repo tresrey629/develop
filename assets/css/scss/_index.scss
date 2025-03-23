@@ -1,0 +1,502 @@
+@use "./mixin" as *;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Zen+Old+Mincho&display=swap");
+
+.fv {
+	display: flex;
+	@include w1024 {
+		flex-direction: column;
+	}
+	&__left {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		flex: 0 0 50%;
+		padding-inline: 5%;
+		background: url(/assets/image/fv-bg-left.webp) no-repeat center center / cover;
+		@include w1024 {
+			padding-top: 10%;
+		}
+	}
+	&__left-supplement {
+		text-align: center;
+		color: #fff;
+		font-size: 1.5vw;
+		font-weight: 300;
+		@include w768 {
+			font-size: 2vw;
+		}
+		@include w599 {
+			font-size: 3vw;
+		}
+	}
+	&__left-title {
+		text-align: center;
+		font-family: "Zen Old Mincho", serif;
+		color: #fff;
+		font-size: 4.5vw;
+		margin-block: 3% 1%;
+		@include w768 {
+			margin-top: 2%;
+			font-size: 5.5vw;
+		}
+		@include w599 {
+			font-size: 8.5vw;
+		}
+	}
+	&__left-subtitle {
+		text-align: center;
+		color: #fff;
+		font-size: 2vw;
+		font-weight: 700;
+		@include w768 {
+			font-size: 2.5vw;
+		}
+		@include w599 {
+			font-size: 4vw;
+		}
+	}
+	&__left-img {
+		margin-block: 6% 4%;
+		@include w1024 {
+			margin-block: 4% 3%;
+			width: 55%;
+			margin-inline: auto;
+		}
+		@include w599 {
+			width: 85%;
+		}
+	}
+	&__right {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		flex: 0 0 50%;
+		padding-inline: 3% 6%;
+		background: url(/assets/image/fv-bg-right.webp) no-repeat center center / cover;
+		.common-btn {
+			margin-left: 7%;
+		}
+	}
+	&__right-title {
+		font-size: 3.1vw;
+		margin-bottom: 3%;
+		@include w768 {
+			font-size: 4.5vw;
+		}
+		@include w599 {
+			font-size: 6.5vw;
+		}
+		span {
+			color: #9C2D2E;
+		}
+	}
+	&__right-text {
+		font-family: "Noto Sans JP", sans-serif;
+		font-size: max(0.85vw, 12px);
+		line-height: 1.1875;
+		@include w599 {
+			width: 70%;
+		}
+	}
+	&__right-img {
+		margin-block: 9% 5%;
+		@include w1024 {
+			width: 65%;
+			margin-block: 6% 4%;
+		}
+		@include w599 {
+			width: 95%;
+		}
+	}
+}
+
+.learning {
+	background: url(/assets/image/learning-bg.webp) no-repeat center center / cover;
+	padding: 0% 8%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&__content {
+		background: #E5E9EB;
+		padding: 4% 11.5%;
+		@include w599 {
+			padding-inline: 6%;
+		}
+	}
+	&__subtitle {
+		text-align: center;
+		color: #94224C;
+		font-size: 1.85vw;
+		font-weight: 600;
+		@include w768 {
+			font-size: 2.3vw;
+		}
+		@include w599 {
+			font-size: 3vw;
+		}
+	}
+	&__title {
+		margin-block: 1.5%;
+		text-align: center;
+		font-size: 2.1vw;
+		@include w768 {
+			font-size: 2.7vw;
+		}
+		@include w599 {
+			font-size: 3.4vw;
+		}
+	}
+	&__supplement {
+		text-align: center;
+		color: #14376C;
+		font-size: 1vw;
+		@include w768 {
+			font-size: 1.7vw;
+		}
+		@include w599 {
+			font-size: 2.7vw;
+		}
+	}
+	&__cards {
+		margin-top: 2.5%;
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: 2%;
+		row-gap: 3vh;
+		@include w1024 {
+			row-gap: 2vh;
+		}
+		@include w768 {
+			row-gap: 1vh;
+		}
+	}
+	&__card {
+		flex: 0 0 18.4%;
+		aspect-ratio: 1/1;
+		background: #FFFFFF;
+		box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.16);
+		transition: 0.3s;
+		@include w1024 {
+			flex: 0 0 23.5%;
+		}
+		@include w768 {
+			flex: 0 0 32%;
+		}
+		@include w599 {
+			flex: 0 0 48%;
+			aspect-ratio: 1/0.7;
+		}
+		&:hover {
+			cursor: pointer;
+			transition: 0.3s;
+			opacity: 0.7;
+		}
+	}
+	&__card-banner {
+		padding-block: 5%;
+		text-align: center;
+		color: #fff;
+		font-size: 0.9vw;
+		font-weight: 600;
+		@include w1024 {
+			font-size: 1.2vw;
+		}
+		@include w768 {
+			font-size: 1.6vw;
+		}
+		@include w599 {
+			font-size: 3vw;
+		}
+		&--red {
+			background: #EF8572;
+		}
+		&--yellow {
+			background: #EBB840;
+		}
+		&--yellow-green {
+			background: #86C469;
+		}
+		&--purple {
+			background: #B688BB;
+		}
+		&--orange {
+			background: #F39E5D;
+		}
+		&--blue {
+			background: #80B1DF;
+		}
+		&--green {
+			background: #63C0AB;
+		}
+		&--pink {
+			background: #EF90AA;
+		}
+		&--bright-blue {
+			background: #76C9D4;
+		}
+	}
+	&__card-title {
+		margin-block: 8%;
+		text-align: center;
+		font-size: 0.9vw;
+		font-weight: 600;
+		@include w1024 {
+			font-size: 1.2vw;
+		}
+		@include w768 {
+			font-size: 1.6vw;
+		}
+		@include w599 {
+			font-size: 3vw;
+		}
+		&--red {
+			color: #EF8572;
+		}
+		&--yellow {
+			color: #EBB840;
+		}
+		&--yellow-green {
+			color: #86C469;
+		}
+		&--purple {
+			color: #B688BB;
+		}
+		&--orange {
+			color: #F39E5D;
+		}
+		&--blue {
+			color: #80B1DF;
+		}
+		&--green {
+			color: #63C0AB;
+		}
+		&--pink {
+			color: #EF90AA;
+		}
+		&--bright-blue {
+			color: #76C9D4;
+		}
+	}
+	&__card-img {
+		height: 30%;
+		text-align: center;
+		img {
+			height: 100%;
+		}
+	}
+	&__card-btn {
+		margin-block: 8% 6%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		@include w1024 {
+			gap: 4px;
+		}
+		@include w768 {
+			gap: 2px;
+		}
+		p {
+			color: #C1C1C1;
+			font-size: max(0.7vw , 10px);
+			font-weight: 600;
+		}
+		div {
+			flex: 0 0 4%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			@include w1024 {
+				flex: 0 0 7px;
+				margin-top: 4px;
+			}
+		}
+	}
+	.common-btn {
+		margin-top: 5%;
+	}
+}
+
+.learning-popup {
+	display: none;
+	/* 初期状態ではポップアップ全体を非表示 */
+	&__bg {
+		background: rgba(0, 0, 0, 0.4);
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 20;
+	}
+	&__card {
+		display: none;
+		/* 各ポップアップカードも非表示 */
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 420px;
+		margin-inline: auto;
+		z-index: 30;
+		@include w599 {
+			width: 350px;
+		}
+	}
+	&__card-banner {
+		padding-block: 19px;
+		text-align: center;
+		color: #fff;
+		font-size: 22px;
+		font-weight: 600;
+		position: relative;
+		@include w599 {
+			font-size: 18px;
+		}
+		&--red {
+			background: #EF8572;
+		}
+		&--yellow {
+			background: #EBB840;
+		}
+		&--yellow-green {
+			background: #86C469;
+		}
+		&--purple {
+			background: #B688BB;
+		}
+		&--orange {
+			background: #F39E5D;
+		}
+		&--blue {
+			background: #80B1DF;
+		}
+		&--green {
+			background: #63C0AB;
+		}
+		&--pink {
+			background: #EF90AA;
+		}
+		&--bright-blue {
+			background: #76C9D4;
+		}
+		img {
+			position: absolute;
+			right: 18px;
+			top: 50%;
+			transform: translateY(-50%);
+			padding: 10px;
+			@include w599 {
+				right: 10px;
+			}
+		}
+	}
+	&__white-bg {
+		background: #fff;
+		padding: 20px 20px 40px;
+	}
+	&__card-img {
+		margin-bottom: 32px;
+		@include w599 {
+			margin-bottom: 23px;
+		}
+	}
+	&__card-title {
+		text-align: center;
+		font-size: 26px;
+		font-weight: 600;
+		padding-bottom: 14px;
+		@include w599 {
+			font-size: 20px;
+		}
+		&--red {
+			color: #EF8572;
+			border-bottom: 1px solid #EF8572;
+		}
+		&--yellow {
+			color: #EBB840;
+			border-bottom: 1px solid #EBB840;
+		}
+		&--yellow-green {
+			color: #86C469;
+			border-bottom: 1px solid #86C469;
+		}
+		&--purple {
+			color: #B688BB;
+			border-bottom: 1px solid #B688BB;
+		}
+		&--orange {
+			color: #F39E5D;
+			border-bottom: 1px solid #F39E5D;
+		}
+		&--blue {
+			color: #80B1DF;
+			border-bottom: 1px solid #80B1DF;
+		}
+		&--green {
+			color: #63C0AB;
+			border-bottom: 1px solid #63C0AB;
+		}
+		&--pink {
+			color: #EF90AA;
+			border-bottom: 1px solid #EF90AA;
+		}
+		&--bright-blue {
+			color: #76C9D4;
+			border-bottom: 1px solid #76C9D4;
+		}
+	}
+	&__point {
+		margin-block: 28px 19px;
+		text-align: center;
+		color: #333333;
+		font-size: 22px;
+		@include w599 {
+			font-size: 18px;
+			margin-block: 20px 11px;
+		}
+	}
+	&__point-text {
+		font-family: "Noto Sans JP", sans-serif;
+		line-height: 1.88;
+		font-size: 18px;
+		@include w599 {
+			font-size: 14px;
+		}
+		&--red {
+			color: #EF8572;
+		}
+		&--yellow {
+			color: #EBB840;
+		}
+		&--yellow-green {
+			color: #86C469;
+		}
+		&--purple {
+			color: #B688BB;
+		}
+		&--orange {
+			color: #F39E5D;
+		}
+		&--blue {
+			color: #80B1DF;
+		}
+		&--green {
+			color: #63C0AB;
+		}
+		&--pink {
+			color: #EF90AA;
+		}
+		&--bright-blue {
+			color: #76C9D4;
+		}
+	}
+	.common-btn {
+		margin-top: 35px;
+		width: 312px;
+		padding-block: 15px;
+		@include w599 {
+			margin-top: 25px;
+		}
+	}
+}
