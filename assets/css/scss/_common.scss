@@ -5,10 +5,10 @@ html {
 	scroll-behavior: smooth;
 }
 body {
-  &.open {
-    height: 100vh;
-    overflow: hidden;
-  }
+	&.open {
+		height: 100vh;
+		overflow: hidden;
+	}
 }
 body,
 a {
@@ -33,6 +33,7 @@ ul {
 }
 main {
 	position: relative;
+	height: 100dvh;
 }
 section {
 	height: 100dvh;
@@ -65,11 +66,12 @@ section {
 
 /* 上から下にスクロールした時のアクティブなセクション */
 .in_from_top {
-	animation: inFromTopBg 1s ease-out forwards;
+	animation: inFromTopBg 0.8s ease-out forwards;
 }
 @keyframes inFromTopBg {
 	0% {
-		transform: scale3d(.85, .85, .85) translate3d(25%, -140%, 0); /* 右上から */
+		transform: scale3d(.85, .85, .85) translate3d(25%, -140%, 0);
+		/* 右上から */
 		animation-timing-function: cubic-bezier(.55, .055, .675, .19);
 		transform-origin: center;
 		opacity: 0;
@@ -87,11 +89,12 @@ section {
 
 /* 下から上にスクロールした時のアクティブなセクション */
 .in_from_bottom {
-	animation: inFromBottomBg 1s forwards;
+	animation: inFromBottomBg 0.8s forwards;
 }
 @keyframes inFromBottomBg {
 	0% {
-		transform: scale3d(.85, .85, .85) translate3d(-25%, 140%, 0); /* 左下から */
+		transform: scale3d(.85, .85, .85) translate3d(-25%, 140%, 0);
+		/* 左下から */
 		animation-timing-function: cubic-bezier(.55, .055, .675, .19);
 		transform-origin: center;
 	}
@@ -108,7 +111,7 @@ section {
 
 /* 下から上にスクロールした時のアクティブなセクションの次のセクション */
 .out_to_bottom {
-	animation: outToBottomBg .8s ease-out forwards;
+	animation: outToBottomBg 0.8s ease-out forwards;
 }
 @keyframes outToBottomBg {
 	from {
@@ -139,14 +142,53 @@ section {
 	visibility: hidden;
 }
 
-
+.fixed-menu {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 1%;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	gap: 7px;
+	@include w1200 {
+		display: none;
+	}
+	li {
+		padding-right: 25px;
+		position: relative;
+		@include w1520 {
+			padding-right: 20px;
+		}
+		&::after {
+			content: "●";
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			color: #FFF;
+			transition: color 0.3s ease;
+			@include w1520 {
+				font-size: 0.8vw;
+			}
+		}
+		a {
+			color: #fff;
+			font-size: 0.8vw;
+		}
+	}
+	li.active::after {
+		color: #9C2D2E;
+	}
+}
 
 .common-btn {
 	border: 1px solid #fff;
 	background: rgba(0, 0, 0, 0.4);
 	text-align: center;
 	color: #FFFFFF;
-	font-size: max(1vw , 12px);
+	font-size: max(1vw, 12px);
 	font-weight: 600;
 	display: block;
 	max-width: 392px;
@@ -158,8 +200,11 @@ section {
 		width: 35%;
 		padding-block: 1.5%;
 	}
-	@include w599 {
+	@include w500 {
 		width: 50%;
+	}
+	@include w400 {
+		font-size: 10px;
 	}
 	&::before {
 		content: "";
