@@ -45,6 +45,9 @@ section {
 /* 上から下にスクロールした時のアクティブなセクションの1個前のセクション */
 .out_to_top {
 	animation: outToTopBg 1s forwards;
+	@include w450 {
+		animation: outToTopBg 0.8s forwards;
+	}
 }
 @keyframes outToTopBg {
 	0% {
@@ -67,6 +70,9 @@ section {
 /* 上から下にスクロールした時のアクティブなセクション */
 .in_from_top {
 	animation: inFromTopBg 0.8s ease-out forwards;
+	@include w450 {
+		animation: inFromTopBg 0.7s ease-out forwards;
+	}
 }
 @keyframes inFromTopBg {
 	0% {
@@ -90,6 +96,9 @@ section {
 /* 下から上にスクロールした時のアクティブなセクション */
 .in_from_bottom {
 	animation: inFromBottomBg 0.8s forwards;
+	@include w450 {
+		animation: inFromBottomBg 0.7s forwards;
+	}
 }
 @keyframes inFromBottomBg {
 	0% {
@@ -112,6 +121,9 @@ section {
 /* 下から上にスクロールした時のアクティブなセクションの次のセクション */
 .out_to_bottom {
 	animation: outToBottomBg 0.8s ease-out forwards;
+	@include w450 {
+		animation: outToBottomBg 0.7s ease-out forwards;
+	}
 }
 @keyframes outToBottomBg {
 	from {
@@ -203,7 +215,7 @@ section {
 	@include w500 {
 		width: 50%;
 	}
-	@include w400 {
+	@include w450 {
 		font-size: 10px;
 	}
 	&::before {

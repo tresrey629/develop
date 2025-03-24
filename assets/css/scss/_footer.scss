@@ -4,14 +4,14 @@
 	position: absolute;
 	right: 1%;
 	bottom: 2%;
-	@include w400 {
+	@include w450 {
 		right: 0.5%;
 	}
 	&__copyright {
 		font-family: "Noto Sans JP", sans-serif;
 		color: #fff;
 		font-size: max(0.7vw , 10px);
-		@include w400 {
+		@include w450 {
 			font-size: 8px;
 		}
 	}

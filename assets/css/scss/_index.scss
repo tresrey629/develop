@@ -31,7 +31,7 @@
 		@include w500 {
 			font-size: 3vw;
 		}
-		@include w400 {
+		@include w450 {
 			font-size: 3vw;
 		}
 	}
@@ -49,7 +49,7 @@
 		@include w500 {
 			font-size: 8.5vw;
 		}
-		@include w400 {
+		@include w450 {
 			font-size: 7.5vw;
 		}
 	}
@@ -65,7 +65,7 @@
 		@include w500 {
 			font-size: 4vw;
 		}
-		@include w400 {
+		@include w450 {
 			font-size: 3.5vw;
 		}
 	}
@@ -80,7 +80,7 @@
 		@include w500 {
 			width: 85%;
 		}
-		@include w400 {
+		@include w450 {
 			width: 75%;
 		}
 	}
@@ -93,7 +93,7 @@
 		padding-top: 5%;
 		padding-inline: 3% 6%;
 		background: url(/assets/image/fv-bg-right.webp) no-repeat center center / cover;
-		@include w400 {
+		@include w450 {
 			padding-top: 0;
 		}
 		.common-btn {
@@ -112,7 +112,7 @@
 		@include w500 {
 			font-size: 6.5vw;
 		}
-		@include w400 {
+		@include w450 {
 			font-size: 5.5vw;
 		}
 		span {
@@ -127,7 +127,7 @@
 		@include w500 {
 			width: 70%;
 		}
-		@include w400 {
+		@include w450 {
 			font-size: 11px;
 		}
 	}
@@ -141,7 +141,7 @@
 		@include w500 {
 			width: 95%;
 		}
-		@include w400 {
+		@include w450 {
 			width: 90%;
 			margin-top: 4%;
 		}
@@ -154,7 +154,7 @@
 		z-index: 0;
 		&--big {
 			left: -1%;
-	    top: 11%;
+			top: 11%;
 			width: 13%;
 		}
 	}
@@ -166,18 +166,18 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	@include w400 {
+	@include w450 {
 		width: 100%;
 		padding: 0;
 	}
 	&__content {
 		background: #E5E9EB;
 		padding-inline: 11.5%;
-    height: 85%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+		height: 85%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 		@include w500 {
 			padding-inline: 6%;
 		}
@@ -193,7 +193,7 @@
 		@include w500 {
 			font-size: 3vw;
 		}
-		@include w400 {
+		@include w450 {
 			font-size: 4vw;
 		}
 	}
@@ -210,7 +210,7 @@
 		@include w500 {
 			font-size: 3.4vw;
 		}
-		@include w400 {
+		@include w450 {
 			font-size: 4.5vw;
 			margin-block: 3%;
 			line-height: 140%;
@@ -229,7 +229,7 @@
 		@include w500 {
 			font-size: 2.7vw;
 		}
-		@include w400 {
+		@include w450 {
 			font-size: 3vw;
 		}
 	}
@@ -245,7 +245,7 @@
 		@include w768 {
 			row-gap: 1vh;
 		}
-		@include w400 {
+		@include w450 {
 			display: none;
 		}
 	}
@@ -286,7 +286,7 @@
 		@include w500 {
 			font-size: 3vw;
 		}
-		@include w400 {
+		@include w450 {
 			font-size: 3.5vw;
 		}
 		&--red {
@@ -331,7 +331,7 @@
 		@include w500 {
 			font-size: 3vw;
 		}
-		@include w400 {
+		@include w450 {
 			font-size: 3.5vw;
 		}
 		&--red {
@@ -383,7 +383,7 @@
 		}
 		p {
 			color: #C1C1C1;
-			font-size: max(0.7vw , 10px);
+			font-size: max(0.7vw, 10px);
 			font-weight: 600;
 		}
 		div {
@@ -400,17 +400,44 @@
 	.common-btn {
 		margin-top: 5%;
 		padding-block: 1.5%;
-		@include w400 {
+		@include w450 {
 			padding-block: 2%;
 			width: 60%;
 			font-size: 11px;
+		}
+	}
+	.scroll-btn {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		transition: opacity 0.5s ease-in-out;
+		opacity: 1;
+		pointer-events: none;
+		z-index: 1;
+		display: none;
+		@include w450 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		img {
+			animation: scale-width 0.8s ease-in-out infinite alternate-reverse;
+		}
+	}
+	@keyframes scale-width {
+		0% {
+			width: 90%;
+		}
+		100% {
+			width: 100%;
 		}
 	}
 	.slider {
 		display: none;
 		max-width: 307px;
 		margin: 20px auto;
-		@include w400 {
+		@include w450 {
 			display: block;
 		}
 		&--2 {
@@ -419,8 +446,8 @@
 		.slick-track {
 			.slick-slide {
 				max-width: 100%;
-				margin-right: 1vw!important;
-				margin-left: 1vw!important;
+				margin-right: 1vw !important;
+				margin-left: 1vw !important;
 				.learning__card-img {
 					img {
 						margin-inline: auto;

@@ -73,6 +73,11 @@
     @content;
   }
 }
+@mixin w450 {
+  @media screen and (max-width: 450px) {
+    @content;
+  }
+}
 @mixin w429 {
   @media screen and (max-width: 429px) {
     @content;

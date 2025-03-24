@@ -49,6 +49,11 @@ section {
 .out_to_top {
   animation: outToTopBg 1s forwards;
 }
+@media screen and (max-width: 450px) {
+  .out_to_top {
+    animation: outToTopBg 0.8s forwards;
+  }
+}
 
 @keyframes outToTopBg {
   0% {
@@ -68,6 +73,11 @@ section {
 /* 上から下にスクロールした時のアクティブなセクション */
 .in_from_top {
   animation: inFromTopBg 0.8s ease-out forwards;
+}
+@media screen and (max-width: 450px) {
+  .in_from_top {
+    animation: inFromTopBg 0.7s ease-out forwards;
+  }
 }
 
 @keyframes inFromTopBg {
@@ -90,6 +100,11 @@ section {
 .in_from_bottom {
   animation: inFromBottomBg 0.8s forwards;
 }
+@media screen and (max-width: 450px) {
+  .in_from_bottom {
+    animation: inFromBottomBg 0.7s forwards;
+  }
+}
 
 @keyframes inFromBottomBg {
   0% {
@@ -109,6 +124,11 @@ section {
 /* 下から上にスクロールした時のアクティブなセクションの次のセクション */
 .out_to_bottom {
   animation: outToBottomBg 0.8s ease-out forwards;
+}
+@media screen and (max-width: 450px) {
+  .out_to_bottom {
+    animation: outToBottomBg 0.7s ease-out forwards;
+  }
 }
 
 @keyframes outToBottomBg {
@@ -209,7 +229,7 @@ section {
     width: 50%;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .common-btn {
     font-size: 10px;
   }
@@ -284,7 +304,7 @@ header .logo {
     flex: 0 0 45%;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   header .logo {
     flex: 0 0 50%;
   }
@@ -454,7 +474,7 @@ header .toggle-button.open span:last-child {
   right: 1%;
   bottom: 2%;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .footer {
     right: 0.5%;
   }
@@ -464,7 +484,7 @@ header .toggle-button.open span:last-child {
   color: #fff;
   font-size: max(0.7vw, 10px);
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .footer__copyright {
     font-size: 8px;
   }
@@ -510,7 +530,7 @@ header .toggle-button.open span:last-child {
     font-size: 3vw;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .fv__left-supplement {
     font-size: 3vw;
   }
@@ -534,7 +554,7 @@ header .toggle-button.open span:last-child {
     font-size: 8.5vw;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .fv__left-title {
     font-size: 7.5vw;
   }
@@ -556,7 +576,7 @@ header .toggle-button.open span:last-child {
     font-size: 4vw;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .fv__left-subtitle {
     font-size: 3.5vw;
   }
@@ -577,7 +597,7 @@ header .toggle-button.open span:last-child {
     width: 85%;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .fv__left-img {
     width: 75%;
   }
@@ -592,7 +612,7 @@ header .toggle-button.open span:last-child {
   padding-inline: 3% 6%;
   background: url(/assets/image/fv-bg-right.webp) no-repeat center center/cover;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .fv__right {
     padding-top: 0;
   }
@@ -617,7 +637,7 @@ header .toggle-button.open span:last-child {
     font-size: 6.5vw;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .fv__right-title {
     font-size: 5.5vw;
   }
@@ -636,7 +656,7 @@ header .toggle-button.open span:last-child {
     width: 70%;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .fv__right-text {
     font-size: 11px;
   }
@@ -656,7 +676,7 @@ header .toggle-button.open span:last-child {
     width: 95%;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .fv__right-img {
     width: 90%;
     margin-top: 4%;
@@ -682,7 +702,7 @@ header .toggle-button.open span:last-child {
   justify-content: center;
   align-items: center;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .learning {
     width: 100%;
     padding: 0;
@@ -718,7 +738,7 @@ header .toggle-button.open span:last-child {
     font-size: 3vw;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .learning__subtitle {
     font-size: 4vw;
   }
@@ -741,7 +761,7 @@ header .toggle-button.open span:last-child {
     font-size: 3.4vw;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .learning__title {
     font-size: 4.5vw;
     margin-block: 3%;
@@ -766,7 +786,7 @@ header .toggle-button.open span:last-child {
     font-size: 2.7vw;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .learning__supplement {
     font-size: 3vw;
   }
@@ -789,7 +809,7 @@ header .toggle-button.open span:last-child {
     row-gap: 1vh;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .learning__cards {
     display: none;
   }
@@ -844,7 +864,7 @@ header .toggle-button.open span:last-child {
     font-size: 3vw;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .learning__card-banner {
     font-size: 3.5vw;
   }
@@ -897,7 +917,7 @@ header .toggle-button.open span:last-child {
     font-size: 3vw;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .learning__card-title {
     font-size: 3.5vw;
   }
@@ -974,11 +994,40 @@ header .toggle-button.open span:last-child {
   margin-top: 5%;
   padding-block: 1.5%;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .learning .common-btn {
     padding-block: 2%;
     width: 60%;
     font-size: 11px;
+  }
+}
+.learning .scroll-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 1;
+  display: none;
+}
+@media screen and (max-width: 450px) {
+  .learning .scroll-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.learning .scroll-btn img {
+  animation: scale-width 0.8s ease-in-out infinite alternate-reverse;
+}
+@keyframes scale-width {
+  0% {
+    width: 90%;
+  }
+  100% {
+    width: 100%;
   }
 }
 .learning .slider {
@@ -986,7 +1035,7 @@ header .toggle-button.open span:last-child {
   max-width: 307px;
   margin: 20px auto;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .learning .slider {
     display: block;
   }

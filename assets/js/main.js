@@ -196,8 +196,16 @@ document.addEventListener("DOMContentLoaded", function () {
     dots: false, //ドット
     infinite: false, //ループ
     pauseOnHover: false, //ホバーで止めない
-		slidesToShow: 1, // 一度に1枚表示
-		slidesToScroll: 1, // 1枚ずつスクロール
+    slidesToShow: 1, // 一度に1枚表示
+    slidesToScroll: 1, // 1枚ずつスクロール
     centerMode: true, //両サイドを表示
+  });
+  // スライドが動いたら .scroll-btn を非表示
+  $(".slider").on("beforeChange", function () {
+    $("#scrollButton").animate({ opacity: 0 }, 200);
+    // 透明になった後、少し遅らせて非表示に
+    setTimeout(function () {
+      $("#scrollButton").css("display", "none");
+    }, 400); // 1秒後に非表示
   });
 });
